@@ -51,3 +51,10 @@ C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\obj\Debug\
 C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\obj\Debug\eUseControl.Web.csproj.CopyComplete
 C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\obj\Debug\eUseControl.Web.dll
 C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\obj\Debug\eUseControl.Web.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\Antlr3.Runtime.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\Newtonsoft.Json.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\System.Web.Optimization.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\WebGrease.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\Newtonsoft.Json.xml
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Web\bin\System.Web.Optimization.xml
