@@ -1,0 +1,47 @@
+﻿@model eUseControl.Web.Models.UserData 
+
+@{
+    ViewBag.Title = "_Header";
+}
+<header class="sticky">
+    <div class="tagline d-none d-lg-block">
+        <div class="container-fluid">
+            <div class="float-left info-link">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <i class="mdi mdi-phone-classic mr-1"></i> +373 60 320 310
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="mdi mdi-email mr-1"></i> @Html.DisplayFor(u => u.Username)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="float-right">
+                <ul class="list-inline social-links mb-0">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="mdi mdi-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="mdi mdi-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="mdi mdi-google-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!--Navbar Start-->
+
+    <!-- Navbar End -->
+</header>

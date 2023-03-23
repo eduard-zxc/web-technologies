@@ -1,0 +1,69 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eUse System | @ViewBag.Title</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+    @Styles.Render("~/bundles/font-awesome/css")
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/bootstrap.min/css")
+    @Styles.Render("~/bundles/peicon7stroke/css")
+    @Styles.Render("~/bundles/materialdesignicons/css")
+    @Styles.Render("~/bundles/style/scss")
+    @Styles.Render("~/bundles/_variable/scss")
+
+    <!-- Add local styles, mostly for plugins css file -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+    <!-- Primary HOME style -->
+    @Styles.Render("~/bundles/main/css")
+</head>
+<body>
+    <!-- Home -->
+    @Html.Partial("_Home")
+
+    <!-- Main view -->
+    @RenderBody()
+
+    <!-- Header -->
+    @Html.Partial("_Header")
+
+    <!-- Navigation -->
+    @Html.Partial("_Navigation")
+
+    <!-- Services -->
+    <!-- Features-->
+    <!-- Counter -->
+    <!-- Pricing -->
+    <!-- Testimonial -->
+    <!-- FAQ-->
+    <!-- Footer-->
+    @Html.Partial("_Footer")
+
+
+
+    <!--Section for main scripts render -->
+    <!-- Scripts.Render("~/bundles/bootstrap/js") -->
+
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/unobtrusive/js")
+    @Scripts.Render("~/bundles/pace/js")
+    @Scripts.Render("~/bundles/app/js")
+    @Scripts.Render("~/bundles/bootstrap.bundle.min/js")
+    @Scripts.Render("~/bundles/counter.init/js")
+    @Scripts.Render("~/bundles/jquery.easing.min/js")
+    @Scripts.Render("~/bundles/jquery.min/js")
+    @Scripts.Render("~/bundles/scrollspy.min/js")
+    @Scripts.Render("~/bundles/validation/js")
+    @Scripts.Render("~/bundles/contact/php")
+
+    <!-- Handler for local scripts -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>
