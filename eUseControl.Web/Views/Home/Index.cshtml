@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+<<<<<<< HEAD
     ViewBag.Title = "_Home";
 }
 
@@ -35,3 +36,43 @@
             </div>
         </div>
     </div>
+=======
+    ViewBag.Title = "Home";
+}
+
+@using System.Web.Optimization
+@model eUseControl.Web.Models.UserData
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <div id="resultTarget"></div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+	                    <th>PRODUCT</th>
+	                    <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @using (Html.BeginForm("Classes", "Home", FormMethod.Post, new { autocomplete = "off" }))
+                    {
+	                    foreach (var prod in Model.Products)
+	                    {
+		                    <tr>
+			                    <td>@prod</td>
+			                    <td>
+				                    <button style="float: right" class="btn btn-primary btn-xs" name="btn"
+				                            type="submit" value="@prod">
+					                    Redirect
+				                    </button>
+			                    </td>
+		                    </tr>
+	                    }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f

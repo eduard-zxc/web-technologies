@@ -17,6 +17,10 @@ namespace eUseControl.Web
             // Code that runs on application startup
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }

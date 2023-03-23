@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\bin\Debug\eUseControl.Domain.dll
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\bin\Debug\eUseControl.Domain.pdb
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\bin\Debug\eUseControl.Helpers.dll
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.csproj.CopyComplete
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.dll
+C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.pdb

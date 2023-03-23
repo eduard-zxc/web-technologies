@@ -1,12 +1,23 @@
 ﻿@using System.Web.Optimization
+<<<<<<< HEAD
+=======
+
+<!DOCTYPE html>
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
     <title>eUseSystem | @ViewBag.Title</title>
     <link href•"https: //fonts.googleapis.com/css?family =Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
 
+=======
+    <title>eUse System | @ViewBag.Title</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
     @Styles.Render("~/bundles/font-awesome/css")
     @Styles.Render("~/bundles/bootstrap/css")
     @Styles.Render("~/bundles/bootstrap.min/css")
@@ -23,10 +34,19 @@
     @Styles.Render("~/bundles/main/css")
 </head>
 <body>
+<<<<<<< HEAD
 
     <!-- Home -->
     @Html.Partial("_Home")
 
+=======
+    <!-- Home -->
+    @Html.Partial("_Home")
+
+    <!-- Main view -->
+    @RenderBody()
+
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
     <!-- Header -->
     @Html.Partial("_Header")
 
@@ -34,6 +54,7 @@
     @Html.Partial("_Navigation")
 
     <!-- Services -->
+<<<<<<< HEAD
 @*    @Html.Partial("_Services")
 *@
     <!-- Features-->
@@ -56,6 +77,17 @@
 *@
     <!-- Main view -->
     @RenderBody()
+=======
+    <!-- Features-->
+    <!-- Counter -->
+    <!-- Pricing -->
+    <!-- Testimonial -->
+    <!-- FAQ-->
+    <!-- Footer-->
+    @Html.Partial("_Footer")
+
+
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
 
     <!--Section for main scripts render -->
     <!-- Scripts.Render("~/bundles/bootstrap/js") -->
@@ -75,4 +107,8 @@
     <!-- Handler for local scripts -->
     @RenderSection("scripts", required: false)
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
