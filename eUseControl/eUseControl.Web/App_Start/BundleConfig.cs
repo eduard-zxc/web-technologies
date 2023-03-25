@@ -73,17 +73,9 @@ namespace eUseControl.Web
             // jQuery Validation
             bundles.Add(new ScriptBundle("~/bundles/validation/js").Include(
                       "~/Scripts/jquery.validate.min.js"));
-<<<<<<< HEAD
-=======
-
->>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f
             // PHP
             bundles.Add(new ScriptBundle("~/bundles/contact/php").Include(
                 "~/assets/php/contact.php"));
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 671bf15a2cc30ed8078d91f3f87d0efbbe83fc7f

@@ -4,3 +4,9 @@ C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.dll
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Helpers\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.AssemblyReference.cache
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Helpers\obj\Debug\eUseControl.Helpers.pdb

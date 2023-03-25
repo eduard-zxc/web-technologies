@@ -9,3 +9,14 @@ C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseC
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CopyComplete
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.dll
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.BusinessLogic.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Domain.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\bin\Debug\eUseControl.Helpers.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.csproj.CopyComplete
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.BusinessLogic\obj\Debug\eUseControl.BusinessLogic.pdb

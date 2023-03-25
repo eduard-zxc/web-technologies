@@ -7,3 +7,7 @@ C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.csproj.CopyComplete
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.dll
 C:\Users\User\Desktop\Lab3\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.pdb
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.csproj.AssemblyReference.cache
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.dll
+C:\Users\Eduard\Workspace\WebTechnologies\eUseControl\eUseControl.Domain\obj\Debug\eUseControl.Domain.pdb
