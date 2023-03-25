@@ -1,1 +1,37 @@
-﻿
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "_Home";
+}
+
+@model eUseControl.Web.Models.UserData
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @using (Html.BeginForm("Product", "Home", FormMethod.Post, new { autocomplete = "off" }))
+                        {
+                            foreach (var prod in Model.Products)
+                            {
+                                <tr>
+                                    <td>@prod</td>
+                                    <td>
+                                        <button style="float: right" class="btn btn-primary btn-xs" name="btn"
+                                                type="submit" value="@prod">View</button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

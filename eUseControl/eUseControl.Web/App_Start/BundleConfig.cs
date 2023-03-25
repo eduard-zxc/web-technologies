@@ -73,7 +73,6 @@ namespace eUseControl.Web
             // jQuery Validation
             bundles.Add(new ScriptBundle("~/bundles/validation/js").Include(
                       "~/Scripts/jquery.validate.min.js"));
-
             // PHP
             bundles.Add(new ScriptBundle("~/bundles/contact/php").Include(
                 "~/assets/php/contact.php"));

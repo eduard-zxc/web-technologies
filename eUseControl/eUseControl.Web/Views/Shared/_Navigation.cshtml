@@ -2,53 +2,61 @@
     ViewBag.Title = "_Navigation";
 }
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-custom" id="navbar">
-    <div class="container-fluid">
-        <!-- LOGO -->
-        <a class="logo text-uppercase" href="index.html">
-            <img src="images/logo-light.png" alt="" class="logo-light" height="20" />
-            <img src="images/logo-dark.png" alt="" class="logo-dark" height="20" />
-        </a>
+@model eUseControl.Web.Models.UserData
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="mdi mdi-menu"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-                <li class="nav-item active">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#features" class="nav-link">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#pricing" class="nav-link">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#testimonial" class="nav-link">Testimonial</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#faq" class="nav-link">Faq</a>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pages <i class="mdi mdi-chevron-down ml-1"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="about.html">About</a>
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="blog-details.html">Blog Details</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
+<header class="sticky">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom" id="navbar">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href=@Url.Action( "Index" , "Home")>
+                PROJECT X
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#testimonial" class="nav-link">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link">Faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pages <i class="mdi mdi-chevron-down ml-1"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="about.html">About</a>
+                                <a class="dropdown-item" href="blog.html">Blog</a>
+                                <a class="dropdown-item" href="blog-details.html">Blog Details</a>
+                                <a class="dropdown-item" href="contact.html">Contact</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-
-            </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="profil-link">
+                        <a href="#">
+                            <span class="profil-address">@Html.DisplayFor(u => u.Username)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
+</header>

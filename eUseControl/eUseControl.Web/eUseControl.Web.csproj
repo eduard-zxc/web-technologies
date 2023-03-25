@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F14474E4-C6FC-4386-A678-8E64DBC733A1}</ProjectGuid>
+    <ProjectGuid>{8F4ED616-2498-4A71-BBF2-33DFB7835674}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressSSLPort>44350</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -103,6 +103,8 @@
     <Content Include="assets\css\materialdesignicons.min.css" />
     <Content Include="assets\css\pe-icon-7-stroke.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="assets\fonts\Pe-icon-7-stroke.svg" />
     <Content Include="assets\images\blog\blog-details.jpg" />
     <Content Include="assets\images\blog\img-1.jpg" />
     <Content Include="assets\images\blog\img-2.jpg" />
@@ -136,7 +138,6 @@
     <Content Include="assets\js\jquery.easing.min.js" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\scrollspy.min.js" />
-    <Content Include="assets\php\contact.php" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -155,9 +156,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\materialdesignicons.min.css" />
-    <Content Include="Content\pe-icon-7-stroke.css" />
-    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -199,18 +197,15 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="assets\fonts\fontawesome-webfont.svg" />
-    <Content Include="assets\fonts\materialdesignicons-webfont.svg" />
-    <Content Include="assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\style.css.map" />
+    <Content Include="assets\css\style.css.map" />
     <Content Include="assets\fonts\materialdesignicons-webfont.eot" />
     <Content Include="assets\fonts\materialdesignicons-webfont.ttf" />
     <Content Include="assets\fonts\materialdesignicons-webfont.woff" />
@@ -218,11 +213,10 @@
     <Content Include="assets\fonts\Pe-icon-7-stroke.eot" />
     <Content Include="assets\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="assets\php\contact.php" />
     <Content Include="assets\scss\style.scss" />
     <Content Include="assets\scss\_variable.scss" />
-    <Content Include="assets\css\style.css.map" />
     <None Include="Scripts\jquery-3.6.3.intellisense.js" />
-    <Content Include="Scripts\counter.init.js" />
     <Content Include="Scripts\jquery-3.6.3.js" />
     <Content Include="Scripts\jquery-3.6.3.min.js" />
     <Content Include="Scripts\jquery-3.6.3.slim.js" />
@@ -232,33 +226,19 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.js" />
     <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
-    <Content Include="Scripts\jquery.easing.min.js" />
-    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\scrollspy.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Shared\_Home.cshtml" />
-    <Content Include="Views\Shared\_Features.cshtml" />
-    <Content Include="Views\Shared\_Counter.cshtml" />
-    <Content Include="Views\Shared\_FAQ.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_Navigation.cshtml" />
-    <Content Include="Views\Shared\_Services.cshtml" />
-    <Content Include="Views\Shared\_Pricing.cshtml" />
-    <Content Include="Views\Shared\_Testimonial.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -278,11 +258,11 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="assets\fonts\FontAwesome.otf" />
-    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
@@ -291,6 +271,19 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Home.cshtml" />
+    <Content Include="Views\Shared\_Services.cshtml" />
+    <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\Shared\_Counter.cshtml" />
+    <Content Include="Views\Shared\_FAQ.cshtml" />
+    <Content Include="Views\Shared\_Features.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Pricing.cshtml" />
+    <Content Include="Views\Shared\_Testimonial.cshtml" />
+    <Content Include="Views\Home\Product.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -300,7 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -315,9 +307,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62973</DevelopmentServerPort>
+          <DevelopmentServerPort>62962</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44352/</IISUrl>
+          <IISUrl>https://localhost:44350/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
