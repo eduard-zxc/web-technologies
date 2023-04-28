@@ -1,0 +1,44 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>eUse System | @ViewBag.Title</title>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+     @Styles.Render("~/bundles/main/css")
+     @Styles.Render("~/bundles/bootstrap/css")
+     @Styles.Render("~/bundles/font-awesome/css")
+     @Styles.Render("~/bundles/aos/css")
+
+     @if (IsSectionDefined("Styles"))
+     {@RenderSection("Styles", required: false)}
+
+</head>
+<body>
+
+     <!-- Main view -->
+     @RenderBody()
+
+     <!-- Arrow -->
+     @Html.Partial("_Arrow")
+     <!-- Navigation -->
+     @Html.Partial("_Navigation")
+
+     <!--Section for main scripts render -->
+     @Scripts.Render("~/bundles/aos/js")
+     @Scripts.Render("~/bundles/bootstrap.min/js")
+     @Scripts.Render("~/bundles/custom/js")
+     @Scripts.Render("~/bundles/jquery.min/js")
+     @Scripts.Render("~/bundles/smoothscroll/js")
+     @Scripts.Render("~/bundles/up/js")
+
+
+     <!-- Handler for local scripts -->
+     @RenderSection("scripts", required: false)
+</body>
+</html>

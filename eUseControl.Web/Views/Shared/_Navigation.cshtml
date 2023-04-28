@@ -1,0 +1,46 @@
+﻿@{
+     ViewBag.Title = "_Navigation";
+}
+<nav class="navbar navbar-expand-lg fixed-top">
+     <div class="container">
+
+          <a class="navbar-brand" href="@Url.Action("Index","Home")">MyGym Fitness</a>
+
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                         <a class="navbar-brand" href="@Url.Action("Index","Home")">Home
+                    </li>
+                    
+                    <li class="nav-item">
+                         <a class="navbar-brand" href="@Url.Action("Index","Subscription")">Subscriptions
+
+                    </li>
+
+                    <li class="nav-item">
+                         <a class="navbar-brand" href="@Url.Action("Index","Schedule")">Schedule
+
+                    </li>
+
+                    <li class="nav-item">
+                         <a class="navbar-brand" href="@Url.Action("Index","SignUp")">SignUp
+
+                    </li>
+
+                    <li class="nav-item">
+                         <a class="navbar-brand" href="@Url.Action("Index","Login")">Log In
+
+                    </li>
+               </ul>
+
+           
+          </div>
+
+     </div>
+</nav>    
