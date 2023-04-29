@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eUseControl.Domain.Entities.Subscription;
 using eUseControl.Domain.Entities.User;
 
 namespace eUseControl.BusinessLogic.DBModel
@@ -16,5 +17,7 @@ namespace eUseControl.BusinessLogic.DBModel
         }
 
         public virtual DbSet<UDbTable> Users { get; set; }
+
+        public virtual DbSet<SubscriptionUDbTable> Subscriptions { get; set; }
     }
 }

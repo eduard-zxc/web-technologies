@@ -13,5 +13,11 @@ namespace eUseControl.BusinessLogic
         {
             return new SessionBL();
         }
-    }
+
+        public ISubscription GetSubscriptionBL()
+        {
+             return new SubscriptionBL();
+        }
+
+     }
 }

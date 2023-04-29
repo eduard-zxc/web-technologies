@@ -16,6 +16,5 @@ namespace eUseControl.BusinessLogic.DBModel
         }
 
         public virtual DbSet<Session> Sessions { get; set; }
-        public virtual DbSet<SubscriptionUDbTable> Subscriptions { get; set; }
     }
 }

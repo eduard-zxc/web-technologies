@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace eUseControl.Web.Models
+namespace eUseControl.Domain.Entities.Subscription
 {
-     public class Subscription
+     public class SubscriptionData
      {
           public int Id { get; set; }
           public string Name { get; set; }
           public string Description { get; set; }
           public int Price { get; set; }
+
      }
 }

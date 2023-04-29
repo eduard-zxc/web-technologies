@@ -118,7 +118,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Subscription\SubscriptionData.cs" />
     <Compile Include="Entities\Subscription\SubscriptionUDbTable.cs" />
+    <Compile Include="Entities\User\PostResponse.cs" />
     <Compile Include="Entities\User\Session.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />

@@ -20,10 +20,11 @@ namespace eUseControl.Domain.Entities.Subscription
 
           [Required]
           [Display(Name = "Price")]
-          public string Price { get; set; }
+          public int Price { get; set; }
 
           [Required]
-          [Display(Name = "Duration")]
-          public string Duration { get; set; }
+          [Display(Name = "Description")]
+          public string Description { get; set; }
+
      }
 }

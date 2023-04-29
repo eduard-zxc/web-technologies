@@ -8,6 +8,7 @@
       font-style: normal;
   }
 
+  
   @font-face {
       font-family: 'Plain';
       src: url('../fonts/Plain-Light.woff2') format('woff2'),
@@ -201,7 +202,7 @@
     text-decoration: none;
   }
 
-
+  
   /* BG OVERLAY */
 
   .bg-overlay {

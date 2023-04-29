@@ -6,12 +6,13 @@ using System.Web.Mvc;
 
 namespace eUseControl.Web.Controllers
 {
-    public class ScheduleController : Controller
-    {
-        // GET: Schedule
+   public class ScheduleController : Controller
+   {
         public ActionResult Index()
         {
-            return View();
+             
+             return View();
+
         }
-    }
+   }
 }

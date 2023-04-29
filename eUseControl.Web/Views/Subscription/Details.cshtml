@@ -1,0 +1,32 @@
+﻿@{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+     ViewBag.Title = "Details";
+}
+
+@model eUseControl.Web.Models.Subscription
+
+<div class="container mt-4" style="padding-top: 80px;">
+     <div class="card">
+          <div class="card-header">
+               <h4 class="mb-0">Subscription Details</h4>
+          </div>
+          <div class="card-body">
+               <dl class="row">
+                    <dt class="col-sm-3">Name:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+                    <dt class="col-sm-3">Description:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
+
+                    <dt class="col-sm-3">Price:</dt>
+                    <dd class="col-sm-9">@Html.DisplayFor(model => model.Price)</dd>
+               </dl>
+          </div>
+          <div class="card-footer">
+               <div class="btn-group">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-secondary" })
+               </div>
+          </div>
+     </div>
+</div>
