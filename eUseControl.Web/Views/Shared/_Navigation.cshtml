@@ -15,31 +15,36 @@
           <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ml-lg-auto">
                     <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Home")">Home
+                         <a class="navbar-brand" href="@Url.Action("Index","Home")">Home </a> 
                     </li>
                     
                     <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Subscription")">Subscriptions
+                         <a class="navbar-brand" href="@Url.Action("Index","Subscription")">Subscriptions </a>
 
                     </li>
 
                     <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Schedule")">Schedule
+                         <a class="navbar-brand" href="@Url.Action("Index","Schedule")">Schedule </a>
 
                     </li>
-
-                    <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","SignUp")">SignUp
-
-                    </li>
-
-                    <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Login")">Log In
-
+                    
+                    <li class ="nav-item">
+                         @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+                         {
+                              <a class="navbar-brand" href=""> @ViewBag.Username  </a>
+                              <a class="navbar-brand" href="@Url.Action("Index","Logout")">Log Out</a>
+                         }
+                         else
+                         {
+                              <li class="nav-item">
+                                   <a class="navbar-brand" href="@Url.Action("Index","SignUp")"> Sign Up</a>
+                              </li>
+                              <li class="nav-item">
+                                   <a class="navbar-brand" href="@Url.Action("Index","Login")">Log In </a>
+                              </li>
+                         }
                     </li>
                </ul>
-
-           
           </div>
 
      </div>

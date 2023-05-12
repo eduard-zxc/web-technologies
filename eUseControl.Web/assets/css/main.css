@@ -127,18 +127,18 @@
 
   /* BUTTON */
 
-  .custom-btn {
-    background: transparent;
-    border-radius: var(--border-radius-small);
-    padding: 14px 24px;
-    color: var(--white-color);
-    font-size: var(--menu-font-size);
-    font-weight: var(--font-weight-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-  }
+.custom-btn {
+     background: --white-color;
+     border-radius: var(--border-radius-small);
+     padding: 14px 24px;
+     color: var(--white-color);
+     font-size: var(--menu-font-size);
+     font-weight: var(--font-weight-normal);
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     white-space: nowrap;
+     transition: all 0.3s ease;
+}
 
   .custom-btn:hover {
     color: var(--primary-color);
@@ -263,7 +263,7 @@
   }
 
   .navbar-brand {
-    color: var(--white-color);
+       color: white;
     font-size: var(--h3-font-size);
     font-weight: var(--font-weight-bold);
     line-height: normal;
@@ -366,8 +366,24 @@
     min-height: 100vh;
     position: relative;
   }
-
-
+.Signup-Image {
+     background-image: url('../images/SignUp-Photo.jpg');
+     background-size: cover;
+     background-position: top;
+     background-repeat: no-repeat;
+     vertical-align: middle;
+     min-height: 100vh;
+     position: relative;
+}
+.login-Image {
+     background-image: url('../images/Login-Photo.jpg');
+     background-size: cover;
+     background-position: top;
+     background-repeat: no-repeat;
+     vertical-align: middle;
+     min-height: 100vh;
+     position: relative;
+}
   /*
      CLASS               
   */
@@ -584,6 +600,16 @@
     color: var(--primary-color);
   }
 
+  /* Adjust the width of the input fields */
+  .signin-form.webform {
+       width: 100%;
+  }
+
+  /* Adjust the width and height of the button */
+  button[type="submit"] {
+       width: 100%;
+       height: 40px;
+  }
 
   /*
      SOCIAL ICON              
@@ -663,9 +689,69 @@
     }
   }
 
+
+
 /*
      scroll to top              
   */
+  .custom-btn-2 {
+       background: var(--primary-color);
+       border-radius: var(--border-radius-small);
+       padding: 12px 24px;
+       color: var(--white-color);
+       font-size: var(--menu-font-size);
+       font-weight: var(--font-weight-normal);
+       text-transform: uppercase;
+       letter-spacing: 0.5px;
+       white-space: nowrap;
+       transition: all 0.3s ease;
+       border: none;
+       cursor: pointer;
+  }
+
+  .custom-btn-2:hover {
+       background: #e04222;
+  }
+
+  .custom-btn-2:focus {
+       outline: none;
+       box-shadow: 0 0 0 2px #e04222;
+  }
+
+  .custom-btn-2.bordered {
+       border: 1px solid var(--primary-color);
+       color: var(--primary-color);
+       background: transparent;
+  }
+
+  .custom-btn-2.bordered:hover,
+  .custom-btn-2.bordered:focus {
+       background: var(--primary-color);
+       border-color: var(--primary-color);
+       color: var(--white-color);
+  }
+
+  .custom-btn-2.bg-color:hover,
+  .custom-btn-2.bg-color:focus {
+       background: #e04222;
+  }
+
+  input[type=submit] {
+       background-color: #f13a11;
+       border: none;
+       color: white;
+       padding: 12px 20px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       font-size: 16px;
+       border-radius: 4px;
+       cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+       background-color: #e0320c;
+  }
 
   #myBtn {
     display: none; 

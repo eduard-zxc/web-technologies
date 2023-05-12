@@ -122,7 +122,6 @@
     <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\SubscriptionAPI.cs" />
     <Compile Include="Core\UserApi.cs" />
-    <Compile Include="DBModel\SessionContext.cs" />
     <Compile Include="DBModel\UserContext.cs" />
     <Compile Include="Interfaces\ISession.cs" />
     <Compile Include="Interfaces\ISubscription.cs" />

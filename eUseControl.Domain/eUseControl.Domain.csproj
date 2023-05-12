@@ -121,10 +121,11 @@
     <Compile Include="Entities\Subscription\SubscriptionData.cs" />
     <Compile Include="Entities\Subscription\SubscriptionUDbTable.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />
-    <Compile Include="Entities\User\Session.cs" />
+    <Compile Include="Entities\User\SessionsDb.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\ULoginResp.cs" />
+    <Compile Include="Entities\User\URegisterData.cs" />
     <Compile Include="Entities\User\UserMinimal.cs" />
     <Compile Include="Enums\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

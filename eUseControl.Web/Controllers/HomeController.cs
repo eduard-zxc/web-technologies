@@ -4,37 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using eUseControl.Web.Controllers;
 
 namespace eUseControl.Web.Controllers
 {
-    public class HomeController : Controller
-    {
-        public ActionResult Index()
-        {
-            UserData u = new UserData
-            {
-                Username = "customer",
-                Products = new List<string> { "Product #1", "Product #2", "Product #3" }
-            };
+     public class HomeController : BaseController
+     {
+          public ActionResult Index()
+          {
 
-            return View();
-        }
+               SessionStatus();
+               GetUsername();
+               GetUserLevel();
 
-        public ActionResult Classes()
-        {
-            var product = Request.QueryString["p"];
+               return View();
+          }
+     }
 
-            UserData u = new UserData();
-            u.Username= "customer";
-            u.SingleProduct = product;
-
-            return View(u);
-        }
-
-        [HttpPost]
-        public ActionResult Classes(string btn)
-        {
-            return RedirectToAction("Classes", "Home", new { @p = btn });
-        }
-    }
 }

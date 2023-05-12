@@ -26,6 +26,10 @@ namespace eUseControl.BusinessLogic.Core
                     return new PostResponse { Status = false, StatusMsg = "Add Subscrpition Description" };
                }
 
+               if (subscription.ImageUrl == null || subscription.ImageUrl.Length == 0)
+               {
+                    return new PostResponse { Status = false, StatusMsg = "Add Subscrpition Description" };
+               }
                using (var db = new UserContext())
                {
                     //find max id
@@ -55,6 +59,8 @@ namespace eUseControl.BusinessLogic.Core
                               Id = result[i].Id,
                               Name = result[i].Name,
                               Description = result[i].Description,
+                              Price = result[i].Price,
+                              ImageUrl = result[i].ImageUrl
                          });
                     }
                }
@@ -68,30 +74,35 @@ namespace eUseControl.BusinessLogic.Core
                     return db.Subscriptions.FirstOrDefault(p => p.Id == id);
                }
           }
-          internal PostResponse EditSubscriptionAction(SubscriptionUDbTable product)
+          internal PostResponse EditSubscriptionAction(SubscriptionUDbTable subscription)
           {
                using (var db = new UserContext())
                {
-                    var tableProduct = db.Subscriptions.FirstOrDefault(p => p.Id == product.Id);
-                    if (tableProduct == null)
+                    var tableSubscription = db.Subscriptions.FirstOrDefault(p => p.Id == subscription.Id);
+                    if (tableSubscription == null)
                     {
                          return new PostResponse { Status = false, StatusMsg = "no such item id" };
                     }
-                    if (product.Name != null && product.Name != tableProduct.Name)
+                    if (subscription.Name != null && subscription.Name != tableSubscription.Name)
                     {
-                         tableProduct.Name = product.Name;
+                         tableSubscription.Name = subscription.Name;
                     }
 
-                    if (product.Description != null && product.Description != tableProduct.Description)
+                    if (subscription.Description != null && subscription.Description != tableSubscription.Description)
                     {
-                         tableProduct.Description = product.Description;
+                         tableSubscription.Description = subscription.Description;
                     }
 
-                    if (product.Price != null && product.Price != tableProduct.Price)
+                    if (subscription.Price != 0 && subscription.Price != tableSubscription.Price)
                     {
-                         tableProduct.Price = product.Price;
+                         tableSubscription.Price = subscription.Price;
                     }
-                    db.Entry(tableProduct).State = EntityState.Modified;
+
+                    if (subscription.ImageUrl != null && subscription.ImageUrl != tableSubscription.ImageUrl)
+                    {
+                         tableSubscription.ImageUrl = subscription.ImageUrl;
+                    }
+                    db.Entry(tableSubscription).State = EntityState.Modified;
                     db.SaveChanges();
                }
                return new PostResponse { Status = true };

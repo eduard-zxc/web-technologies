@@ -161,12 +161,15 @@
     <Content Include="assets\css\aos.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\validation.css" />
     <Content Include="assets\css\main.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\images\class\cardio-class.jpg" />
     <Content Include="assets\images\class\crossfit-class.jpg" />
     <Content Include="assets\images\class\yoga-class.jpg" />
     <Content Include="assets\images\hero-bg.jpg" />
+    <Content Include="assets\images\Login-Photo.jpg" />
+    <Content Include="assets\images\SignUp-Photo.jpg" />
     <Content Include="assets\images\team\undraw_energizer_2224.svg" />
     <Content Include="assets\images\team\undraw_yoga_248n.svg" />
     <Content Include="assets\js\aos.js" />
@@ -282,25 +285,29 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\SubscriptionController.cs" />
     <Compile Include="Extension\HttpContextExtensions.cs" />
+    <Compile Include="Filters\AdminModAttribute.cs" />
+    <Compile Include="Filters\TrainerModAttribute.cs" />
+    <Compile Include="Filters\UserModAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Subscription.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\UserSettings.cs" />
+    <Compile Include="Models\UserSignUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Views\Home\Classes.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Schedule\Index.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Arrow.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\SignUp\Index.cshtml" />
-    <Content Include="Views\Subscription\IndexCool.cshtml" />
     <Content Include="Views\Subscription\Index.cshtml" />
     <Content Include="Views\Subscription\Create.cshtml" />
     <Content Include="Views\Subscription\Details.cshtml" />
@@ -343,6 +350,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Logout\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">

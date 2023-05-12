@@ -10,11 +10,12 @@ using eUseControl.BusinessLogic;
 using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities.Subscription;
 using eUseControl.Domain.Entities.User;
+using eUseControl.Web.Filters;
 using eUseControl.Web.Models;
 
 namespace eUseControl.Web.Controllers
 {
-    public class SubscriptionController : Controller
+    public class SubscriptionController : BaseController
     {
          private readonly ISubscription _subscription;
 
@@ -26,7 +27,12 @@ namespace eUseControl.Web.Controllers
          // GET: Schedule
          public ActionResult Index()
          {
-              var subscriptions = _subscription.GetSubscriptionList();
+
+              SessionStatus();
+              GetUsername();
+              GetUserLevel();
+
+               var subscriptions = _subscription.GetSubscriptionList();
               List<Subscription> subscriptionData = new List<Subscription>();
               foreach (var subscription in subscriptions)
               {
@@ -35,12 +41,14 @@ namespace eUseControl.Web.Controllers
                         Id = subscription.Id,
                         Name = subscription.Name,
                         Description = subscription.Description,
-                        Price = subscription.Price
+                        Price = subscription.Price,
+                        ImageUrl = subscription.ImageUrl
                    });
               }
               return View(subscriptionData);
          }
 
+          [TrainerMod]
           //Create a new Subscription
           public ActionResult Create()
           {
@@ -54,7 +62,8 @@ namespace eUseControl.Web.Controllers
                    Id = subscription.Id,
                    Name = subscription.Name,
                    Description = subscription.Description,
-                   Price = subscription.Price
+                   Price = subscription.Price,
+                   ImageUrl = subscription.ImageUrl
               };
 
               var subscriptionCreate = _subscription.CreateSubscription(data);
@@ -87,6 +96,7 @@ namespace eUseControl.Web.Controllers
                     Name = subscription.Name,
                     Description = subscription.Description,
                     Price = subscription.Price,
+                    ImageUrl = subscription.ImageUrl
                };
 
                return View(subs);
@@ -103,6 +113,7 @@ namespace eUseControl.Web.Controllers
                     Name = subscription.Name,
                     Description = subscription.Description,
                     Price = subscription.Price,
+                    ImageUrl = subscription.ImageUrl
                };
 
                return View(subs);
@@ -118,6 +129,8 @@ namespace eUseControl.Web.Controllers
                     Name = subscription.Name,
                     Description = subscription.Description,
                     Price = subscription.Price,
+                    ImageUrl = subscription.ImageUrl
+
                };
 
                var SubscriptionCreate = _subscription.UpdateSubscription(data);

@@ -6,27 +6,58 @@
 @using System.Web.Optimization
 @model eUseControl.Web.Models.UserLogin
 <!-- LOG IN -->
-<section class="login section" id="login">
-     <div class="container">
-          <div class="row">
+<section class="login-Image d-flex flex-column justify-content-center align-items-center" id="login">
+     <div class="bg-overlay">
+          <div class="container py-5 h-100">
+               <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                         <div class="card shadow-2-strong" data-aos="fade-up" style="border-radius: 1rem;">
+                              <div class="card-body p-5">
+                                   <!-- Column for Log In Form -->
+                                   <h2 class="mb-5 text-center" data-aos-delay="200">Log In</h2>
+                                   @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "LoginForm" }))
+                                   {
+                                        @Html.AntiForgeryToken()
+                                        <form action="#" method="post" class="signin-form webform" data-aos="fade-up" data-aos-delay="400"
+                                              role="form">
+                                             <div class="form-group">
+                                                  @Html.LabelFor(m => m.Credential, new { @class = "pull-left checkbox-inline" })
+                                                  @Html.TextBoxFor(m => m.Credential, new
+                                                  {
+                                                       @class = "form-control",
+                                                       type = "text",
+                                                       title = "Please enter your password",
+                                                       placeholder = "Username",
+                                                       value = "",
+                                                       name = "password",
+                                                  })
+                                             </div>
+                                             <div class="form-group">
+                                                  @Html.LabelFor(m => m.Password, new { @class = "pull-left checkbox-inline" })
+                                                  @Html.TextBoxFor(m => m.Password, new
+                                                  {
+                                                       @class = "form-control",
+                                                       type = "password",
+                                                       title = "Please enter your password",
+                                                       placeholder = "Password",
+                                                       value = "",
+                                                       name = "password",
+                                                       id = "password"
+                                                  })
+                                                  @Html.ValidationSummary(false, "", new { @class = "validation-error" })
+                                             </div>
+                                             <label class="pull-left checkbox-inline"><input type="checkbox"> I am a Trainer</label>
+                                             <a href="/resetpassword" class="pull-right">Forgot Password?</a>
+                                             <button type="submit" class="form-control" id="submit-button" name="submit">Log In</button>
+                                             <p class="mt-3 mb-0">Don't have an account yet? <a href="@Url.Action("Index", "SignUp")">Sign up</a>.</p>
 
+                                        </form>
+                                   }
 
-               <!-- Column for Log In Form -->
-               <div class="col-lg-5 col-md-6 col-12">
-                    <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Log In</h2>
-
-                    <form action="#" method="post" class="signin-form webform" data-aos="fade-up" data-aos-delay="400"
-                          role="form">
-                         <input type="text" class="form-control" name="signin-username" placeholder="Username">
-
-                         <input type="password" class="form-control" name="signin-password" placeholder="Password">
-
-                         <button type="submit" class="form-control" id="submit-button" name="submit">Log In</button>
-
-                         <p class="mt-3 mb-0">Don't have an account yet? <a href="@Url.Action("Index","SignUp")">Sign up</a>.</p>
-                    </form>
+                              </div>
+                         </div>
+                    </div>
                </div>
-
           </div>
      </div>
 </section>

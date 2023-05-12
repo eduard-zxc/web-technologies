@@ -1,25 +1,38 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using eUseControl.BusinessLogic.Core;
 using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities.User;
+using eUseControl.Helpers.Session;
 
 namespace eUseControl.BusinessLogic
 {
-    public class SessionBL : UserApi, ISession
-    {
-        public ULoginResp UserLogin(ULoginData data)
-        {
-            return UserLoginAction(data);
-        }
+     public class SessionBL : UserApi, ISession
+     {
+          public PostResponse UserLogin(ULoginData data)
+          {
+               return UserLoginAction(data);
+          }
+          public PostResponse UserRegister(URegisterData data)
+          {
+               return UserSignupAction(data);
+          }
 
-        public HttpCookie GenCookie(string loginCredential)
-        {
-            return Cookie(loginCredential);
-        }
+          public string GenUserCookie(ULoginData data)
+          {
+               var session = new SessionActionType();
+               var cookie = session.GenerateCookieBase(data.Credential);
 
-        public UserMinimal GetUserByCookie(string apiCookieValue)
-        {
-            return UserCookie(apiCookieValue);
-        }
-    }
+               return cookie;
+          }
+          public HttpCookie GenCookie(string loginCredential)
+          {
+               return Cookie(loginCredential);
+          }
+          [Obsolete]
+          public UserMinimal GetUserByCookie(string apiCookieValue)
+          {
+               return UserCookie(apiCookieValue);
+          }
+     }
 }

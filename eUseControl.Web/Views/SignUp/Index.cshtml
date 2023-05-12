@@ -1,29 +1,82 @@
 ﻿@{
-     ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+     ViewBag.Title = "SignUp";
+
 }
-
+@using System.Web.Optimization
+@using eUseControl.Domain.Enums
+@model eUseControl.Web.Models.UserSignUp
 <!-- SIGN UP -->
-<section class="signup section" id="signup">
-     <div class="container" style="padding-top: 80px;">
-          <div class="row">
+<section class="Signup-Image d-flex flex-column justify-content-center align-items-center" id="signup">
+     <div class="bg-overlay">
+          <div class="container py-5 h-100">
+               <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                         <div class="card shadow-2-strong" data-aos="fade-up" style="border-radius: 1rem;">
+                              <div class="card-body p-5">
 
-               <!-- Column for SignUp Form -->
-               <div class="ml-auto col-lg-5 col-md-6 col-12">
-                    <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Sign Up</h2>
+                                   <h2 class="mb-5 text-center" data-aos-delay="200">Sign Up</h2>
+                                   <!-- Column for SignUp Form -->
+                                   @using (Html.BeginForm("Index", "SignUp", FormMethod.Post, new { @id = "RegisterForm" }))
+                                   {
+                                        @Html.AntiForgeryToken()
 
-                    <form action="#" method="post" class="signin-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                         <input type="text" class="form-control" name="signin-fullname" placeholder="Full Name">
+                                        <form action="#" method="post" class="signin-form webform" data-aos="fade-up" data-aos-delay="4000" role="form">
+                                             @Html.ValidationSummary(false, "", new { @class = "validation-error" })
 
-                         <input type="text" class="form-control" name="signin-age" placeholder="Age">
+                                             @Html.ValidationMessageFor(m => m.Username, "", new { @class = "validation-error" })
+                                             @Html.TextBoxFor(m => m.Username, new
+                                             {
+                                                  type = "text",
+                                                  placeholder = "Username",
+                                                  title = "Please enter  Username",
+                                                  value = "",
+                                                  name = "username",
+                                                  id = "username",
+                                                  @class = "form-control"
+                                             })
+                                             @Html.TextBoxFor(m => m.Email, new
+                                             {
+                                                  type = "email",
+                                                  placeholder = "Email",
+                                                  title = "Please enter your email",
+                                                  value = "",
+                                                  name = "email",
+                                                  id = "email",
+                                                  @class = "form-control"
+                                             })
+                                             @Html.PasswordFor(m => m.Password, new
+                                             {
+                                                  type = "password",
+                                                  @class = "form-control",
+                                                  title = "Please enter your password",
+                                                  placeholder = "Password",
+                                                  name = "passowrd"
+                                             })
 
-                         <input type="email" class="form-control" name="signin-email" placeholder="Email">
-
-                         <input type="text" class="form-control" name="signin-username" placeholder="Username">
-
-                         <input type="password" class="form-control" name="signin-password" placeholder="Password">
-
-                         <button type="submit" class="form-control" id="submit-button" name="submit">Sign In</button>
-                    </form>
+                                             @Html.PasswordFor(m => m.ConfirmPassword, new
+                                             {
+                                                  type = "password",
+                                                  @class = "form-control",
+                                                  title = "Please enter your password",
+                                                  placeholder = "Password",
+                                                  name = "passowrd"
+                                             })
+                                             <!--<label class="checkbox-inline">
+                                                  Html.CheckBoxFor(m => m.Trainer, new { id = "isTrainer" })
+                                                  Sign up as a Trainer
+                                             </label>
+                                             <button type="submit" class="form-control" id="submit-button" name="submit">Sign In</button>
+                                             --><p class="mt-3 mb-0">Already have an account? <a href="@Url.Action("Index", "Login")">Log In</a>.</p>
+                                        </form>
+                                   }
+                              </div>
+                              <div>
+                                   <body dat-spy="scroll" data-target="#navbarNav" data-offset="50">
+                                   </body>
+                              </div>
+                         </div>
+                    </div>
                </div>
           </div>
      </div>

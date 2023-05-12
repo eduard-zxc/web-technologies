@@ -26,5 +26,8 @@ namespace eUseControl.Domain.Entities.Subscription
           [Display(Name = "Description")]
           public string Description { get; set; }
 
+          [Required]
+          [Display(Name = "ImageUrl")]
+          public string ImageUrl { get; set; }
      }
 }
