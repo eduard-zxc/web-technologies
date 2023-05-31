@@ -1,0 +1,62 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eUse System | @ViewBag.Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet" type="text/css">
+
+    @Styles.Render("~/bundles/aos/css")
+    @Styles.Render("~/bundles/bootstrap-datepicker/css")
+    @Styles.Render("~/bundles/bootstrap.min/css")
+    @Styles.Render("~/bundles/jquery-ui/css")
+    @Styles.Render("~/bundles/jquery.fancybox.min/css")
+    @Styles.Render("~/bundles/jquery.mb.YTPlayer.min/css")
+    @Styles.Render("~/bundles/magnific-popup/css")
+    @Styles.Render("~/bundles/mediaelementplayer/css")
+    @Styles.Render("~/bundles/owl.carousel.min/css")
+    @Styles.Render("~/bundles/owl.theme.default.min/css")
+    @Styles.Render("~/bundles/style/css")
+    @Styles.Render("~/bundles/validation/css")
+
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+</head>
+<body>
+    <!-- Navigation -->
+    @Html.Partial("_Navigation")
+    <!-- Main view -->
+    @RenderBody()
+    @Html.Partial("_Footer")
+
+    @Scripts.Render("~/bundles/aos/js")
+    @Scripts.Render("~/bundles/bootstrap-datepicker.min/js")
+    @Scripts.Render("~/bundles/bootstrap.min/js")
+    @Scripts.Render("~/bundles/jquery-3.3.1.min/js")
+    @Scripts.Render("~/bundles/jquery-migrate-3.0.1.min/js")
+    @Scripts.Render("~/bundles/jquery-ui/js")
+    @Scripts.Render("~/bundles/jquery.countdown.min/js")
+    @Scripts.Render("~/bundles/jquery.easing.1.3/js")
+    @Scripts.Render("~/bundles/jquery.fancybox.min/js")
+    @Scripts.Render("~/bundles/jquery.magnific-popup.min/js")
+    @Scripts.Render("~/bundles/jquery.mb.YTPlayer.min/js")
+    @Scripts.Render("~/bundles/jquery.stellar.min/js")
+    @Scripts.Render("~/bundles/jquery.sticky/js")
+    @Scripts.Render("~/bundles/main/js")
+    @Scripts.Render("~/bundles/mediaelement-and-player.min/js")
+    @Scripts.Render("~/bundles/owl.carousel.min/js")
+    @Scripts.Render("~/bundles/popper.min/js")
+    @Scripts.Render("~/bundles/slick.min/js")
+    @Scripts.Render("~/bundles/typed/js")
+
+
+    <!-- Handler for local scripts -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

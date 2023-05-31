@@ -1,0 +1,51 @@
+﻿@{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+     ViewBag.Title = "Details";
+}
+
+@model eUseControl.Web.Models.Subscription
+<section class="site-section">
+
+     <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-6 col-md-4 col-lg-3 col-xl-7">
+               <div class="card shadow-2-strong" data-aos="fade-up" style="border-radius: 1rem;">
+                    <div class="card-body p-5">
+                         <div class="site-section bg-light contact-wrap" id="contact-section">
+                              <div class="container">
+                                   <div class="row">
+                                        <div class="col-lg-12 col-12 text-center mb-5">
+                                             <h2 data-aos="fade-up" data-aos-delay="200">@Model.Name</h2>
+                                        </div>
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-12">
+                                             <img src="@Model.ImageUrl" class="img-fluid" alt="Class" data-aos="fade-up" data-aos-delay="500">
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-12">
+                                             <div class="class-info" data-aos="fade-up" data-aos-delay="500">
+                                                  <h3>@Model.Name</h3>
+                                                  <p><strong>Description:</strong> @Model.Description</p>
+                                                  <p><strong>Price:</strong> $@Model.Price</p>
+                                                  <p><strong>Trained by:</strong> Aerobics Trainer</p>
+                                                  <p><strong>Duration:</strong> 60 minutes</p>
+                                                  <a href="@Url.Action("Index","Subscription")" class="btn custom-btn bg-color mt-3"><center>Back</center></a>
+                                                  <a href="@Url.Action("Edit","Subscription",new { id = Model.Id })" class="btn custom-btn bg-color mt-3" data-aos="fade-up" data-aos-delay="300"><center>Edit</center></a>
+                                                  <a href="@Url.Action("Delete","Subscription",new { id = Model.Id })" class="btn custom-btn bg-color mt-3" data-aos="fade-up" data-aos-delay="300"><center>Delete</center></a>
+
+                                             </div>
+
+                                        </div>
+
+                                   </div>
+                                   <a type="submit"href="@Url.Action("Index", "Subscription")" class="btn btn-primary py-3 px-5 btn-block r" id="submit-button" name="submit">Buy</a>
+
+                              </div>
+                              <a href="@Url.Action("Index","Subscription")" class="btn custom-btn bg-color mt-3 center"><center>Back</center></a>
+
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+

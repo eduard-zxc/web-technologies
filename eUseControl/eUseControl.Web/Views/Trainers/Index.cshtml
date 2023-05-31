@@ -1,0 +1,45 @@
+﻿@model IEnumerable<eUseControl.Web.Models.Trainer>
+
+@{
+     ViewBag.Title = "Index";
+}
+
+
+<div class="site-section" id="trainer-section">
+     <div class="container">
+          <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
+               <div class="col-md-8  section-heading">
+                    <span class="subheading">Trainer</span>
+                    <h2 class="heading mb-3">Our Trainers</h2>
+                    <p>
+                         Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
+                         texts.
+                         Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                    </p>
+               </div>
+          </div>
+          <div class="row">
+
+               @foreach (var item in Model)
+               {
+                    <div class="ftco-feature-1">
+                         <span class="icon flaticon-gym-1"></span>
+                         <div class="ftco-feature-1-text">
+                              <div class="col-lg-3 mb-4 mb-lg-0 col-md-6 text-center" data-aos="fade-up" data-aos-delay="">
+                                   <div class="person">
+                                        <img src="@item.ImageUrl" alt="Image" class="img-fluid">
+                                        <p class="position">Trainer</p>
+                                        <h3>@item.Name</h3>
+                                        <p class="position">Specialization</p>
+                                        @item.Specialization
+                                        <p class="position">Price</p>
+                                        @item.Price
+                                        <a href="@Url.Action("Details", "Trainers", new { id = item.Id })" class="btn custom-btn bg-color mt-3" data-aos-delay="300"><center>Details</center></a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               }
+          </div>
+     </div>
+</div>

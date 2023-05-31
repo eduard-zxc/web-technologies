@@ -1,0 +1,97 @@
+﻿@model eUseControl.Web.Models.Trainer
+
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
+     <section>
+          <div class="site-section" id="trainer-section">
+               <div class="container">
+                    <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
+                         <div class="col-md-8  section-heading ">
+                              <span class="subheading">Trainer</span>
+                              @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                              @Html.HiddenFor(model => model.Id)
+                              <div class="form-group">
+                                   <h2> @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                                   <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <section>
+                         <div class="left">
+                              <div class="row justify-content-center text-center mb-5 " data-aos="fade-up">
+                                   <div class="col-md-8  section-heading ">
+                                        <div class="form-group">
+                                             <h2> @Html.LabelFor(model => model.Bio, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                                             <div class="col-md-10">
+                                                  @Html.EditorFor(model => model.Bio, new { htmlAttributes = new { @class = "form-control" } })
+                                                  @Html.ValidationMessageFor(model => model.Bio, "", new { @class = "text-danger" })
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </section>
+                    <div class="center" data-aos="fade-up">
+                         <div class="circle">
+                              <img src="@Model.ImageUrl" />
+                         </div>
+                         <div class="form-group">
+                              <h2> @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                              <div class="col-md-10">
+                                   @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                                   @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                              </div>
+                         </div>
+                    </div>
+                    <div class="right">
+                         <div class="row justify-content-center text-center mb-5 " data-aos="fade-up">
+                              <div class="col-md-8  section-heading ">
+                                   <h2 class="heading mb-5">Details</h2>
+                              </div>
+                              <div class="ftco-feature-1-text">
+                                   <div class="form-group">
+                                        <h2> @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                                        <div class="col-md-10">
+                                             @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                                             @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                                        </div>
+                                   </div>
+                                   <div class="form-group">
+                                        <h2> @Html.LabelFor(model => model.Availability, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                                        <div class="col-md-10">
+                                             @Html.EditorFor(model => model.Availability, new { htmlAttributes = new { @class = "form-control" } })
+                                             @Html.ValidationMessageFor(model => model.Availability, "", new { @class = "text-danger" })
+                                        </div>
+                                   </div>
+                                   <div class="form-group">
+                                        <h2> @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                                        <div class="col-md-10">
+                                             @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                             @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                        </div>
+                                   </div>
+                                   <div class="form-group">
+                                        <h2> @Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label col-md-2" })</h2>
+                                        <div class="col-md-10">
+                                             @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
+                                             @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="form-group">
+                                   <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Save" />
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+}
+
+<div class="clearfix"></div>
