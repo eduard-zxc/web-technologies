@@ -119,12 +119,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\BussinesLogic.cs" />
+    <Compile Include="BL\FeedbackBL.cs" />
     <Compile Include="BL\OrderBL.cs" />
+    <Compile Include="Core\FeedbackApi.cs" />
     <Compile Include="Core\OrderApi.cs" />
     <Compile Include="Core\SubscriptionApi.cs" />
     <Compile Include="Core\TrainerApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="DBModel\UserContext.cs" />
+    <Compile Include="Interfaces\IFeedback.cs" />
     <Compile Include="Interfaces\IOrder.cs" />
     <Compile Include="Interfaces\ISession.cs" />
     <Compile Include="Interfaces\ISubscription.cs" />

@@ -341,6 +341,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Feedback\ThankYou.cshtml" />
+    <Content Include="Views\Feedback\FeedbackList.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\SignUp\Index.cshtml" />

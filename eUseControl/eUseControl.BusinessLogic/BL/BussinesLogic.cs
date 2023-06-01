@@ -11,18 +11,22 @@ namespace eUseControl.BusinessLogic.BL
 
         public ISubscription GetSubscriptionBl()
         {
-             return new SubscriptionBl();
+            return new SubscriptionBl();
         }
 
         public ITrainer GetTrainerBl()
         {
-             return new TrainerBl();
+            return new TrainerBl();
         }
 
         public IOrder GetOrderBl()
         {
-             return  new OrderBl();
+            return new OrderBl();
         }
 
-     }
+        public IFeedback GetFeedbackBl()
+        {
+            return new FeedbackBl();
+        }
+    }
 }
