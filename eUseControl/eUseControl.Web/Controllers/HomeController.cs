@@ -1,17 +1,39 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
+using eUseControl.BusinessLogic.BL;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Web.Models;
 
 namespace eUseControl.Web.Controllers
 {
-     public class HomeController : BaseController
-     {
-          public ActionResult Index()
-          {
-               GetUserData();
-               int userId = Convert.ToInt32(ViewBag.UserId);
-               ViewBag.UserId = userId;
-               return View();
-          }
-     }
+    public class HomeController : BaseController
+    {
+        public ISubscriptionDetails _subscription;
+        public HomeController()
+        {
+            var bl = new BussinesLogic();
+            _subscription = bl.GetsSubscriptionDetailsBl();
+        }
+        public ActionResult Index()
+        {
+            GetUserData();
+            int userId = Convert.ToInt32(ViewBag.UserId);
+            ViewBag.UserId = userId;
+            var subscriptions = _subscription.GetAllSubscriptionDuration();
+            List<SubscriptionDuration> subscriptionData = new List<SubscriptionDuration>();
+            foreach (var subscription in subscriptions)
+            {
+                subscriptionData.Add(new SubscriptionDuration()
+                {
+                    Id = subscription.Id,
+                    Name = subscription.Name,
+                    Duration = subscription.Duration,
+                    Price = subscription.Price
+                });
+            }
+            return View(subscriptionData);
+        }
+    }
 
 }

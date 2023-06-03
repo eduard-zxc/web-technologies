@@ -24,6 +24,10 @@ namespace eUseControl.BusinessLogic.BL
             return new OrderBl();
         }
 
+        public ISubscriptionDetails GetsSubscriptionDetailsBl()
+        {
+            return new SubscriptionDetailsBl();
+        }
         public IFeedback GetFeedbackBl()
         {
             return new FeedbackBl();

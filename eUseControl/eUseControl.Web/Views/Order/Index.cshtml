@@ -1,0 +1,142 @@
+﻿@model eUseControl.Web.Models.OrderModel
+
+@{
+     ViewBag.Title = "Index";
+}
+
+<section class="site-section">
+     <!-- HTML code here -->
+
+     <div id="carousel1" class="owl-carousel nonloop-block-14 block-14">
+          @foreach (var item in Model.OrderData.Subscriptions)
+          {
+               <div class="ftco-feature-1">
+                    <div class="row justify-content-center">
+                         <div class="card rounded-0 px-4 py-5 ">
+                              <img src="@item.ImageUrl" alt="Item Image">
+                              <div class="item">
+                                   <h3>@item.Id</h3>
+                              </div>
+                              <p></p>
+                              <h3>@item.Name</h3>
+                              <h3>@item.Price</h3>
+                         </div>
+                    </div>
+               </div>
+          }
+     </div>
+
+     <div id="carousel2" class="owl-carousel nonloop-block-14 block-14">
+          @foreach (var item in Model.OrderData.Trainers)
+          {
+               <div class="ftco-feature-1">
+                    <div class="row justify-content-center">
+                         <div class="card rounded-0 px-4 py-5 ">
+                              <img src="@item.ImageUrl" alt="Item Image">
+                              <div class="item">
+                                   <h3>@item.Id</h3>
+                              </div>
+                              <p></p>
+                              <h3>@item.Name</h3>
+                              <h3>@item.Price</h3>
+                              <h3>@item.Age</h3>
+                              <h3>@item.Number</h3>
+                         </div>
+                    </div>
+               </div>
+          }
+     </div>
+
+     <div id="carousel3" class="owl-carousel nonloop-block-14 block-14">
+          @foreach (var item in Model.OrderData.SubscriptionDurations)
+          {
+               <div class="ftco-feature-1">
+                    <div class="row justify-content-center">
+                         <div class="card rounded-0 px-4 py-5 ">
+                              <div class="item">
+                                   <h3>@item.Id </h3>
+                              </div>
+                              <p></p>
+                              <h3>@item.Name </h3>
+                              <h3>@item.Price </h3>
+                         </div>
+                    </div>
+               </div>
+          }
+     </div>
+
+     <div id="selected-text">
+          <p>Selected Title from Carousel 1: <span id="selected-title1"></span></p>
+          <p>Selected Title from Carousel 2: <span id="selected-title2"></span></p>
+          <p>Selected Title from Carousel 3: <span id="selected-title3"></span></p>
+     </div>
+
+     @using (Html.BeginForm())
+     {
+          @Html.AntiForgeryToken()
+
+          <div class="form-group">
+               <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+               </div>
+          </div>
+
+          <script>
+               $(document).ready(function () {
+                    var carousels = [$("#carousel1"), $("#carousel2"), $("#carousel3")];
+                    var selectedTitles = ["#selected-title1", "#selected-title2", "#selected-title3"];
+
+                    carousels.forEach(function (carousel, index) {
+                         carousel.owlCarousel({
+                              items: 5,
+                              center: true,
+                              nav: true,
+                              dots: false,
+                              responsive: {
+                                   0: {
+                                        items: 1
+                                   },
+                                   600: {
+                                        items: 3
+                                   },
+                                   1000: {
+                                        items: 5
+                                   }
+                              },
+                              onInitialized: function (event) {
+                                   updateSelectedText(event, index);
+                              },
+                              onTranslated: function (event) {
+                                   updateSelectedText(event, index);
+                              }
+                         });
+                    });
+
+                    function updateSelectedText(event, index) {
+                         var currentItem = carousels[index].find(".owl-item.center .item h3");
+                         var selectedText = currentItem.text();
+                         $(selectedTitles[index]).text(selectedText);
+
+                         // Set the selected title to the hidden field value
+                         if (index === 0) {
+                              // Set the selected title from Carousel 1 to the SubscriptionId hidden field
+                              var selectedTitle1 = selectedText;
+                              $("#SubscriptionId").val(selectedTitle1);
+                         } else if (index === 1) {
+                              // Set the selected title from Carousel 2 to the TrainerId hidden field
+                              var selectedTitle2 = selectedText;
+                              $("#TrainerId").val(selectedTitle2);
+                         } else if (index === 2) {
+                              // Set the selected title from Carousel 3 to the SubscriptionDurationId hidden field
+                              var selectedTitle3 = selectedText;
+                              $("#SubscriptionDurationId").val(selectedTitle3);
+                         }
+                    }
+               });
+          </script>
+
+          @Html.HiddenFor(model => model.Orders.SubscriptionId, new { id = "SubscriptionId" })
+          @Html.HiddenFor(model => model.Orders.TrainerId, new { id = "TrainerId" })
+          @Html.HiddenFor(model => model.Orders.SubscriptionDurationId, new { id = "SubscriptionDurationId" })
+     }
+</section>

@@ -2,16 +2,16 @@
 
 namespace eUseControl.Web.Controllers
 {
-   public class ScheduleController : BaseController
-   {
+    public class ScheduleController : BaseController
+    {
 
-          public ActionResult Index()
+        public ActionResult Index()
         {
 
-             GetUserData();
+            GetUserData();
 
-               return View();
+            return View();
 
         }
-   }
+    }
 }

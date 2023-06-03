@@ -19,5 +19,6 @@ namespace eUseControl.BusinessLogic.DBModel
         public virtual DbSet<TrainersUDbTable> Trainers { get; set; }
         public virtual DbSet<FeedbackUDbTable> Feedback { get; set; }
         public virtual DbSet<OrderDbTable> Orders { get; set; }
+        public virtual DbSet<SubscriptionDurationDbTable> SubscriptionsDuration { get; set; }
     }
 }

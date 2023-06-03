@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace eUseControl.Domain.Entities.User
 {
-     public class PostResponse
-     {
-          public bool Status { get; set; }
-          public string StatusMsg { get; set; }
-     }
+    public class PostResponse
+    {
+        public bool Status { get; set; }
+        public string StatusMsg { get; set; }
+    }
 }

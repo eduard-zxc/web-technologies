@@ -1,23 +1,23 @@
 ﻿namespace eUseControl.Web.Models
 {
-     public class Trainer
-     {
-          public int Id { get; set; }
+    public class Trainer
+    {
+        public int Id { get; set; }
 
-          public string Name { get; set; }
+        public string Name { get; set; }
 
-          public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
 
-          public int Age { get; set; }
+        public int Age { get; set; }
 
-          public string Bio { get; set; }
+        public string Bio { get; set; }
 
-          public int Number { get; set; }
+        public int Number { get; set; }
 
-          public string Specialization { get; set; }
+        public string Specialization { get; set; }
 
-          public string Availability { get; set; }
+        public string Availability { get; set; }
 
-          public int Price { get; set; }
-     }
+        public int Price { get; set; }
+    }
 }

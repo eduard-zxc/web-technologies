@@ -313,6 +313,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LogoutController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
@@ -326,7 +327,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderData.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\SubscriptionDuration.cs" />
     <Compile Include="Models\Trainer.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Models\UserLogin.cs" />
@@ -334,7 +339,6 @@
     <Compile Include="Models\UserSignUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Schedule\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Profile\TrainerProfile.cshtml" />
     <Content Include="Views\Profile\UserProfile.cshtml" />
@@ -342,6 +346,7 @@
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\Feedback\ThankYou.cshtml" />
     <Content Include="Views\Feedback\FeedbackList.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\SignUp\Index.cshtml" />
@@ -352,6 +357,7 @@
     <Content Include="Views\Trainers\Index.cshtml" />
     <Content Include="Views\Trainers\Details.cshtml" />
     <Content Include="Views\Trainers\Edit.cshtml" />
+    <Content Include="Views\Subscription\CreateSubscriptionDuration.cshtml" />
     <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -3,15 +3,15 @@ using eUseControl.Domain.Entities.User;
 
 namespace eUseControl.BusinessLogic.Interfaces
 {
-     public interface IOrder
-     {
-          PostResponse CreateOrder(OrderDbTable order);
+    public interface IOrder
+    {
+        PostResponse CreateOrder(OrderDbTable order);
 
-          OrderDbTable GetOrderByTrainerId(int id);
+        OrderDbTable GetOrderByTrainerId(int id);
 
-          OrderDbTable GetOrderByUserId(int id);
+        OrderDbTable GetOrderByUserId(int id);
 
-          void CheckExpiration();
+        void CheckExpiration();
 
-     }
+    }
 }

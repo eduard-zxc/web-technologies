@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace eUseControl.Domain.Entities.User
 {
-     public class SessionsDb
-     {
-          [Key]
-          [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-          public int SessionId { get; set; }
+    public class SessionsDb
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int SessionId { get; set; }
 
-          [Required]
-          [StringLength(30)]
-          public string Username { get; set; }
+        [Required]
+        [StringLength(30)]
+        public string Username { get; set; }
 
-          [Required]
-          public string CookieString { get; set; }
+        [Required]
+        public string CookieString { get; set; }
 
-          [Required]
-          public DateTime ExpireTime { get; set; }
-     }
+        [Required]
+        public DateTime ExpireTime { get; set; }
+    }
 }

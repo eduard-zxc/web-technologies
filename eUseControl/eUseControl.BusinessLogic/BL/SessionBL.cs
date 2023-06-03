@@ -7,39 +7,39 @@ using eUseControl.Helpers.Session;
 
 namespace eUseControl.BusinessLogic.BL
 {
-     public class SessionBl : UserApi, ISession
-     {
-          
+    public class SessionBl : UserApi, ISession
+    {
 
-          public PostResponse UserLogin(ULoginData data)
-          {
-               return UserLoginAction(data);
-          }
-          public PostResponse UserRegister(URegisterData data)
-          {
-               return UserSignupAction(data);
-          }
 
-          public string GenUserCookie(ULoginData data)
-          {
-               var session = new SessionActionType();
-               var cookie = session.GenerateCookieBase(data.Credential);
+        public PostResponse UserLogin(ULoginData data)
+        {
+            return UserLoginAction(data);
+        }
+        public PostResponse UserRegister(URegisterData data)
+        {
+            return UserSignupAction(data);
+        }
 
-               return cookie;
-          }
-          public HttpCookie GenCookie(string loginCredential)
-          {
-               return Cookie(loginCredential);
-          }
-          [Obsolete]
-          public UserMinimal GetUserByCookie(string apiCookieValue)
-          {
-               return UserCookie(apiCookieValue);
-          }
+        public string GenUserCookie(ULoginData data)
+        {
+            var session = new SessionActionType();
+            var cookie = session.GenerateCookieBase(data.Credential);
 
-          public int? GetIdTrainer(int id)
-          {
-               return GetIdTrainerAction(id);
-          }
-     }
+            return cookie;
+        }
+        public HttpCookie GenCookie(string loginCredential)
+        {
+            return Cookie(loginCredential);
+        }
+        [Obsolete]
+        public UserMinimal GetUserByCookie(string apiCookieValue)
+        {
+            return UserCookie(apiCookieValue);
+        }
+
+        public int? GetIdTrainer(int id)
+        {
+            return GetIdTrainerAction(id);
+        }
+    }
 }

@@ -2,11 +2,12 @@
 
 namespace eUseControl.Web.Controllers
 {
-    public class ErrorController : Controller
+    public class ErrorController : BaseController
     {
         // GET: Error
         public ActionResult Index()
         {
+            GetUserData();
             return View();
         }
     }

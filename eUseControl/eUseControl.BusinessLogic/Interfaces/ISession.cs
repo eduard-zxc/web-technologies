@@ -5,12 +5,11 @@ namespace eUseControl.BusinessLogic.Interfaces
 {
     public interface ISession
     {
-          PostResponse UserRegister(URegisterData data);
-         PostResponse UserLogin(ULoginData data);
-         string GenUserCookie(ULoginData data);
-         HttpCookie GenCookie(string loginCredential);
+        PostResponse UserRegister(URegisterData data);
+        PostResponse UserLogin(ULoginData data);
+        string GenUserCookie(ULoginData data);
+        HttpCookie GenCookie(string loginCredential);
         UserMinimal GetUserByCookie(string apiCookieValue);
-
-        int? GetIdTrainer(int id );
+        int? GetIdTrainer(int id);
     }
 }

@@ -5,26 +5,26 @@ using eUseControl.Domain.Entities.User;
 
 namespace eUseControl.BusinessLogic.BL
 {
-     internal class OrderBl:OrderApi, IOrder
-     {
-          public PostResponse CreateOrder(OrderDbTable order)
-          {
-               return CreateOrderAction(order);
-          }
+    internal class OrderBl : OrderApi, IOrder
+    {
+        public PostResponse CreateOrder(OrderDbTable order)
+        {
+            return CreateOrderAction(order);
+        }
 
-          public OrderDbTable GetOrderByTrainerId(int id)
-          {
-               return GetOrderByTrainerIdAction(id);
-          }
+        public OrderDbTable GetOrderByTrainerId(int id)
+        {
+            return GetOrderByTrainerIdAction(id);
+        }
 
-          public OrderDbTable GetOrderByUserId(int id)
-          {
-               return GetOrderByUserIdAction(id);
-          }
+        public OrderDbTable GetOrderByUserId(int id)
+        {
+            return GetOrderByUserIdAction(id);
+        }
 
-          public void CheckExpiration()
-          {
-               CheckExpirationAction();
-          }
-     }
+        public void CheckExpiration()
+        {
+            CheckExpirationAction();
+        }
+    }
 }

@@ -122,6 +122,8 @@
     <Compile Include="Entities\Feedback\FeedbackUDbTable.cs" />
     <Compile Include="Entities\Order\OrderDbTable.cs" />
     <Compile Include="Entities\Subscription\SubscriptionData.cs" />
+    <Compile Include="Entities\Subscription\SubscriptionDurationData.cs" />
+    <Compile Include="Entities\Subscription\SubscriptionDurationDBTable.cs" />
     <Compile Include="Entities\Subscription\SubscriptionUDbTable.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />
     <Compile Include="Entities\User\SessionsDb.cs" />

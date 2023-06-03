@@ -4,13 +4,13 @@ using eUseControl.Domain.Entities.User;
 
 namespace eUseControl.BusinessLogic.Interfaces
 {
-     public interface ITrainer
-     {
-          int TrainerCreate();
-          List<TrainerData> GetTrainersList();
+    public interface ITrainer
+    {
+        int TrainerCreate();
+        List<TrainerData> GetTrainersList();
 
-          TrainersUDbTable GetSingleTrainer(int id);
+        TrainersUDbTable GetSingleTrainer(int id);
 
-          PostResponse UpdateTrainer(TrainersUDbTable trainer);
-     }
+        PostResponse UpdateTrainer(TrainersUDbTable trainer);
+    }
 }
