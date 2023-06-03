@@ -23,6 +23,7 @@ namespace eUseControl.Web.Controllers
         // GET: /Feedback/Index
         public ActionResult Index()
         {
+            GetUserData();
             return View();
         }
 
@@ -31,6 +32,7 @@ namespace eUseControl.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(FeedbackModel model)
         {
+            GetUserData();
             if (ModelState.IsValid)
             {
                 // Assign the current datetime if not provided by the user
@@ -52,29 +54,33 @@ namespace eUseControl.Web.Controllers
         // GET: /Feedback/ThankYou
         public ActionResult ThankYou()
         {
+            GetUserData();
             return View();
         }
 
         // GET: /Feedback/FeedbackList
-        /*[AdminMod]*/
+        [AdminMod]
         public ActionResult FeedbackList()
         {
+            GetUserData();
             var feedbacks = _feedbackRepository.GetFeedback();
             return View(feedbacks);
         }
 
         // POST: /Feedback/DeleteFeedback
         [HttpPost]
-        /*[AdminMod]*/
+        [AdminMod]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteFeedback(int id)
         {
+            GetUserData();
             _feedbackRepository.DeleteFeedback(id);
             return RedirectToAction("FeedbackList");
         }
 
         private FeedbackUDbTable MapFeedbackModelToEntity(FeedbackModel model)
         {
+            GetUserData();
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<FeedbackModel, FeedbackUDbTable>();

@@ -1,36 +1,41 @@
 ﻿@{
-     ViewBag.Title = "_Navigation";
+    ViewBag.Title = "_Navigation";
 }
 <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
-     <div class="container-fluid">
-          <div class="d-flex align-items-center">
-               <div class="site-logo"><a href="@Url.Action("Index","Home")">Workout<span>.</span> </a></div>
-               <div class="ml-auto">
-                    <nav class="site-navigation position-relative text-right" role="navigation">
-                        <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li><a href="@Url.Action("Index","Home")" class="nav-link">Home</a></li>
-                            <li><a href="@Url.Action("Index","Subscription")" class="nav-link">Subscriptions</a></li>
-                            <li><a href="@Url.Action("Index","Schedule")" class="nav-link">Schedule</a></li>
-                            <li><a href="@Url.Action("Index","Trainers")" class="nav-link">Trainers</a></li>
-                            <li><a href="@Url.Action("Index","Feedback")" class="nav-link">Feedback</a></li>
-                            @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
-                            {
-                                <li><a href="@Url.Action("Index","Profile")" class="btn-bordered-purple">@ViewBag.Username id: @Convert.ToInt32(ViewBag.UserId)</a></li>
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <div class="site-logo"><a href="@Url.Action("Index","Home")">Workout<span>.</span> </a></div>
+            <div class="ml-auto">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+                    <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                        <li><a href="@Url.Action("Index","Home")" class="nav-link">Home</a></li>
+                        <li><a href="@Url.Action("Index","Subscription")" class="nav-link">Subscriptions</a></li>
+                        <li><a href="@Url.Action("Index","Schedule")" class="nav-link">Schedule</a></li>
+                        <li><a href="@Url.Action("Index","Trainers")" class="nav-link">Trainers</a></li>
+                        <li><a href="@Url.Action("Index","Feedback")" class="nav-link">Feedback</a></li>
+                        @if(ViewBag.UserLevel == "Admin" )
+                        {
+                        <li><a href="@Url.Action("Index","Feedback/FeedbackList")" class="nav-link">Feedback List</a></li>
+                        }
 
-                                @*<li><a href="@Url.Action("Edit","Trainers",new { id = ViewBag.UserId })" class="nav-link">Edit Profile</a></li>*@
-                                <li><a href="@Url.Action("Index","Logout")" class="nav-link">LogOut</a></li>
-                            }
-                            else
-                            {
-                                <li><a href="@Url.Action("Index","SignUp")" class="nav-link">SignUp</a></li>
-                                <li><a href="@Url.Action("Index","LogIn")" class="nav-link">LogIn</a></li>
-                            }
-                        </ul>
-                    </nav>
-                    <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
-               </div>
+                        @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+                        {
+                            <li><a href="@Url.Action("Index","Profile")" class="btn-bordered-purple">@ViewBag.Username id: @Convert.ToInt32(ViewBag.UserId)</a></li>
 
-          </div>
-     </div>
+                            @*<li><a href="@Url.Action("Edit","Trainers",new { id = ViewBag.UserId })" class="nav-link">Edit Profile</a></li>*@
+                            <li><a href="@Url.Action("Index","Logout")" class="nav-link">LogOut</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("Index","SignUp")" class="nav-link">SignUp</a></li>
+                            <li><a href="@Url.Action("Index","LogIn")" class="nav-link">LogIn</a></li>
+                        }
+                    </ul>
+                </nav>
+                <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
+            </div>
+
+        </div>
+    </div>
 </header>
