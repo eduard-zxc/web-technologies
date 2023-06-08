@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace eUseControl.Web.Controllers
@@ -23,7 +21,7 @@ namespace eUseControl.Web.Controllers
                     }
                }
                System.Web.HttpContext.Current.Session["LoginStatus"] = "logout";
-               return RedirectToAction("Index", "Subscription");
+               return RedirectToAction("Index", "Home");
           }
      }
 }

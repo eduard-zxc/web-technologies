@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using eUseControl.BusinessLogic;
+using eUseControl.BusinessLogic.BL;
 using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Enums;
@@ -17,7 +14,7 @@ namespace eUseControl.Web.Filters
           public AdminModAttribute()
           {
                var bl = new BussinesLogic();
-               _session = bl.GetSessionBL();
+               _session = bl.GetSessionBl();
           }
           public override void OnActionExecuting(ActionExecutingContext filterContext)
           {
@@ -38,7 +35,7 @@ namespace eUseControl.Web.Filters
                     }
                }
                filterContext.Result = new RedirectToRouteResult(
-                    new RouteValueDictionary(new { controller = "Error", action = "Error404" }));
+                    new RouteValueDictionary(new { controller = "Error", action = "Index" }));
           }
      }
 }

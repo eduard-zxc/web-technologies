@@ -18,6 +18,7 @@ namespace eUseControl.Domain.Entities.User
           public URole Level { get; set; }
           public string LoginIp { get; set; }
           public DateTime LoginDateTime { get; set; }
+          public int? TrainerId { get; set; }
 
      }
 }

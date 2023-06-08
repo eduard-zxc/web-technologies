@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using eUseControl.BusinessLogic;
+using eUseControl.BusinessLogic.BL;
 using eUseControl.BusinessLogic.Interfaces;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Domain.Enums;
@@ -18,7 +16,7 @@ namespace eUseControl.Web.Controllers
           public BaseController()
           {
                var bl = new BussinesLogic();
-               _session = bl.GetSessionBL();
+               _session = bl.GetSessionBl();
           }
           public void SessionStatus()
           {
@@ -58,33 +56,42 @@ namespace eUseControl.Web.Controllers
                if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
                {
                     var user = (UserMinimal)System.Web.HttpContext.Current?.Session["__SessionObject"];
-                    ViewBag.Username = user.Username;
+                    if (user != null) ViewBag.Username = user.Username;
                }
                else
                {
                     ViewBag.Username = "Guest";
                }
           }
-
+          public void GetUserId()
+          {
+               if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+               {
+                    var user = (UserMinimal)System.Web.HttpContext.Current?.Session["__SessionObject"];
+                    if (user != null) ViewBag.UserId = user.Id;
+               }
+          }
           public void GetUserLevel()
           {
                if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
                {
                     var user = (UserMinimal)System.Web.HttpContext.Current?.Session["__SessionObject"];
-                    switch (user.Level)
-                    {
-                         case URole.Admin:
-                              ViewBag.UserLevel = "Admin";
-                              break;
-                         case URole.Trainer:
-                              ViewBag.UserLevel = "Trainer";
-                              break;
-                         case URole.User:
-                              ViewBag.UserLevel = "User";
-                              break;
-                         default:
-                              break;
-                    }
+                    if (user != null)
+                         switch (user.Level)
+                         {
+                              case URole.Admin:
+                                   ViewBag.UserLevel = "Admin";
+                                   break;
+                              case URole.Trainer:
+                                   ViewBag.UserLevel = "Trainer";
+                                   break;
+                              case URole.User:
+                                   ViewBag.UserLevel = "User";
+                                   break;
+                              default:
+                                   ViewBag.UserLevel = "Guest";
+                                   break;
+                         }
                }
           }
 
@@ -108,6 +115,14 @@ namespace eUseControl.Web.Controllers
                }
                return new UserSettings();
 
+          }
+
+          public void GetUserData()
+          {
+               SessionStatus();
+               GetUsername();
+               GetUserLevel();
+               GetUserId();
           }
      }
 }

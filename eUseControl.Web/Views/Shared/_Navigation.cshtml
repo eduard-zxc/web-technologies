@@ -1,51 +1,46 @@
 ﻿@{
-     ViewBag.Title = "_Navigation";
+    ViewBag.Title = "_Navigation";
 }
-<nav class="navbar navbar-expand-lg fixed-top">
-     <div class="container">
+<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
-          <a class="navbar-brand" href="@Url.Action("Index","Home")">MyGym Fitness</a>
+    <div class="container-fluid">
+        <div class="d-flex align-items-center">
+            <div class="site-logo"><a href="@Url.Action("Index","Home")">Workout<span>.</span> </a></div>
+            <div class="ml-auto">
+                <nav class="site-navigation position-relative text-right" role="navigation">
+                     <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                          <li><a href="@Url.Action("Index","Home")" class="nav-link">Home</a></li>
+                          <li><a href="@Url.Action("Index","Subscription")" class="nav-link">Subscriptions</a></li>
+                          <li><a href="@Url.Action("Index","Trainers")" class="nav-link">Trainers</a></li>
+                          <li><a href="@Url.Action("Index","Order")" class="nav-link">Orders</a></li>
+                          @{
+                               if (ViewBag.UserLevel == "Admin")
+                               {
+                                    <li><a href="@Url.Action("FeedbackList", "Feedback")" class="nav-link">Feedback List</a></li>
+                               }
+                               else
+                               {
+                                    <li><a href="@Url.Action("Index", "Feedback")" class="nav-link">Feedback</a></li>
 
+                               }
+                          }
+                               @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
+                          {
+                               <li><a href="@Url.Action("Index","Profile")" class="btn-bordered-purple">User: @ViewBag.Username</a></li>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-          </button>
+                               @*<li><a href="@Url.Action("Edit","Trainers",new { id = ViewBag.UserId })" class="nav-link">Edit Profile</a></li>*@
+                               <li><a href="@Url.Action("Index","Logout")" class="nav-link">LogOut</a></li>
+                          }
+                          else
+                          {
+                               <li><a href="@Url.Action("Index","SignUp")" class="nav-link">SignUp</a></li>
+                               <li><a href="@Url.Action("Index","LogIn")" class="nav-link">LogIn</a></li>
+                          }
+                     </ul>
+                </nav>
+                <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
+            </div>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Home")">Home </a> 
-                    </li>
-                    
-                    <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Subscription")">Subscriptions </a>
-
-                    </li>
-
-                    <li class="nav-item">
-                         <a class="navbar-brand" href="@Url.Action("Index","Schedule")">Schedule </a>
-
-                    </li>
-                    
-                    <li class ="nav-item">
-                         @if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
-                         {
-                              <a class="navbar-brand" href=""> @ViewBag.Username  </a>
-                              <a class="navbar-brand" href="@Url.Action("Index","Logout")">Log Out</a>
-                         }
-                         else
-                         {
-                              <li class="nav-item">
-                                   <a class="navbar-brand" href="@Url.Action("Index","SignUp")"> Sign Up</a>
-                              </li>
-                              <li class="nav-item">
-                                   <a class="navbar-brand" href="@Url.Action("Index","Login")">Log In </a>
-                              </li>
-                         }
-                    </li>
-               </ul>
-          </div>
-
-     </div>
-</nav>    
+        </div>
+    </div>
+</header>

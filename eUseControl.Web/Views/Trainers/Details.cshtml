@@ -1,0 +1,50 @@
+﻿@model eUseControl.Web.Models.Trainer
+
+<section>
+    <div class="site-section" id="trainer-section">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
+                <div class="col-md-8  section-heading ">
+                    <span class="subheading">Trainer</span>
+                    <h2 class="heading mb-3">@Model.Name</h2>
+                    <p>
+                        Specialization: @Model.Specialization
+                    </p>
+                </div>
+            </div>
+            <section>
+                <div class="left">
+                    <div class="row justify-content-center text-center mb-5 " data-aos="fade-up">
+                        <div class="col-md-8  section-heading ">
+                            <h2 class="heading mb-5">Biography</h2>
+                            <span class="subheading">@Model.Bio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="center" data-aos="fade-up">
+                <div class="circle">
+                    <img src="@Model.ImageUrl" />
+                </div>
+            </div>
+            <div class="right">
+                <div class="row justify-content-center text-center mb-5 " data-aos="fade-up">
+                    <div class="col-md-8  section-heading ">
+                        <h2 class="heading mb-5">Details</h2>
+                    </div>
+                    <div class="ftco-feature-1-text">
+                        <h5>Age:</h5>
+                        <p>@Model.Age</p>
+                        <h5>Availability</h5>
+                        <p>@Model.Availability</p>
+                        <h5>Price per Session:</h5>
+                        <p>@Model.Price</p>
+                        <h5>Telephone Number:</h5>
+                        <p>@Model.Number</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>

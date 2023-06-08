@@ -118,8 +118,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Feedback\FeedbackModel.cs" />
+    <Compile Include="Entities\Feedback\FeedbackUDbTable.cs" />
+    <Compile Include="Entities\Order\OrderDbTable.cs" />
+    <Compile Include="Entities\SubscriptionDuration\SubscriptionDurationDbTable.cs" />
+    <Compile Include="Entities\Subscription\SubscripitonDurationData.cs" />
     <Compile Include="Entities\Subscription\SubscriptionData.cs" />
     <Compile Include="Entities\Subscription\SubscriptionUDbTable.cs" />
+    <Compile Include="Entities\Trainer\TrainerData.cs" />
+    <Compile Include="Entities\Trainer\TrainersUDbTable.cs" />
     <Compile Include="Entities\User\PostResponse.cs" />
     <Compile Include="Entities\User\SessionsDb.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />

@@ -118,16 +118,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BussinesLogic.cs" />
+    <Compile Include="BL\BussinesLogic.cs" />
+    <Compile Include="BL\FeedbackBl.cs" />
+    <Compile Include="BL\OrderBl.cs" />
+    <Compile Include="BL\SubscripitonDurationBl.cs" />
     <Compile Include="Core\AdminApi.cs" />
+    <Compile Include="Core\FeedbackApi.cs" />
+    <Compile Include="Core\OrderApi.cs" />
     <Compile Include="Core\SubscriptionAPI.cs" />
+    <Compile Include="Core\SubscriptionDurationApi.cs" />
+    <Compile Include="Core\TrainerApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="DBModel\UserContext.cs" />
+    <Compile Include="Interfaces\IFeedback.cs" />
+    <Compile Include="Interfaces\IOrder.cs" />
     <Compile Include="Interfaces\ISession.cs" />
+    <Compile Include="Interfaces\ISubscripitonDuration.cs" />
     <Compile Include="Interfaces\ISubscription.cs" />
+    <Compile Include="Interfaces\ITrainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SessionBL.cs" />
-    <Compile Include="SubscriptionBL.cs" />
+    <Compile Include="BL\SessionBL.cs" />
+    <Compile Include="BL\SubscriptionBL.cs" />
+    <Compile Include="BL\TrainerBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eUseControl.Domain\eUseControl.Domain.csproj">

@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Feedback";
+}
+@model eUseControl.Web.Models.Feedback
+<div class="site-section bg-light contact-wrap" id="contact-section">
+    <div class="container">
+
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8  section-heading">
+                <span class="subheading">Get In Touch</span>
+                <h2 class="heading mb-3">Contact Us</h2>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <form method="post" data-aos="fade">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group row">
+                            <div class="col-md-6 mb-3 mb-lg-0">
+                                @Html.TextBoxFor(m => m.FirstName, new
+                                {
+                                     type = "text",
+                                     placeholder = "FirstName",
+                                     title = "FirstName",
+                                     value = "",
+                                     name = "FirstName",
+                                     id = "FirstName",
+                                     @class = "form-control"
+                                })
+                                @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "validation-error" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.LastName, new
+                                {
+                                     type = "text",
+                                     placeholder = "LastName",
+                                     title = "LastName",
+                                     value = "",
+                                     name = "LastName",
+                                     id = "LastName",
+                                     @class = "form-control"
+                                })
+                                @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "validation-error" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(m => m.Subject, new
+                                {
+                                     type = "text",
+                                     placeholder = "Subject",
+                                     title = "Subject",
+                                     value = "",
+                                     name = "Subject",
+                                     id = "Subject",
+                                     @class = "form-control"
+                                })
+                                @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "validation-error" })
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(m => m.Email, new
+                                {
+                                     type = "text",
+                                     placeholder = "Email",
+                                     title = "Email",
+                                     value = "",
+                                     name = "Email",
+                                     id = "Email",
+                                     @class = "form-control"
+                                })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "validation-error" })
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                @Html.TextAreaFor(m => m.Message, new
+                                {
+                                     @class = "form-control",
+                                     @cols = "30",
+                                     @rows = "10",
+                                     @placeholder = "Enter Your Message"
+                                })
+                                @Html.ValidationMessageFor(m => m.Message, "", new { @class = "validation-error" })
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
+                            </div>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

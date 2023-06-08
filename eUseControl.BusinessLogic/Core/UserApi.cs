@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using AutoMapper;
 using eUseControl.BusinessLogic.DBModel;
 using eUseControl.Domain.Entities.User;
-using eUseControl.Domain.Enums;
 using eUseControl.Helpers;
 
 namespace eUseControl.BusinessLogic.Core
@@ -118,7 +116,9 @@ namespace eUseControl.BusinessLogic.Core
                          Email = data.Email,
                          Password = pass,
                          LasIp = data.LoginIp,
-                         LastLogin = data.LoginDateTime
+                         LastLogin = data.LoginDateTime,
+                         Level = data.Level,
+                         TrainerId = data.TrainerId
 
                     };
 
@@ -137,6 +137,18 @@ namespace eUseControl.BusinessLogic.Core
 
                }
           }
+
+          internal int? GetIdTrainerAction(int id)
+          {
+               using (var db = new UserContext())
+               {
+                    var user = db.Users.FirstOrDefault(item => item.Id == id);
+                    if (user != null)
+                         return user.TrainerId;
+                    else
+                         return null;
+               }
+          }
           internal HttpCookie Cookie(string loginCredential)
           {
                var apiCookie = new HttpCookie("X-KEY")
@@ -151,7 +163,7 @@ namespace eUseControl.BusinessLogic.Core
                     result = db.Users.FirstOrDefault(u => u.Email == loginCredential || u.Username == loginCredential);
                }
 
-               loginCredential = result.Username;
+               if (result != null) loginCredential = result.Username;
 
 
                using (var db = new UserContext())
@@ -185,39 +197,39 @@ namespace eUseControl.BusinessLogic.Core
           }
           [Obsolete]
           internal UserMinimal UserCookie(string cookie)
-          { 
+          {
                SessionsDb session;
-            UDbTable curentUser;
+               UDbTable curentUser;
 
-            using (var db = new UserContext())
-            {
-                session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
-            }
+               using (var db = new UserContext())
+               {
+                    session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
+               }
 
-            if (session == null) return null;
-            using (var db = new UserContext())
-            {
-                var validate = new EmailAddressAttribute();
-                if (validate.IsValid(session.Username))
-                {
-                    curentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
-                }
-                else
-                {
-                    curentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
-                }
-            }
+               if (session == null) return null;
+               using (var db = new UserContext())
+               {
+                    var validate = new EmailAddressAttribute();
+                    if (validate.IsValid(session.Username))
+                    {
+                         curentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
+                    }
+                    else
+                    {
+                         curentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
+                    }
+               }
 
-            if (curentUser == null) return null;
-            var userprofile = new UserMinimal
-            {
-                Id = curentUser.Id,
-                Username = curentUser.Username,
-                Email = curentUser.Email,
-                Level = curentUser.Level
-            };
+               if (curentUser == null) return null;
+               var userprofile = new UserMinimal
+               {
+                    Id = curentUser.Id,
+                    Username = curentUser.Username,
+                    Email = curentUser.Email,
+                    Level = curentUser.Level
+               };
 
-            return userprofile;
+               return userprofile;
           }
      }
 }

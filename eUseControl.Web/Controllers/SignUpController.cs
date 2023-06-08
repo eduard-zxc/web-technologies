@@ -1,24 +1,24 @@
 ﻿using AutoMapper;
 using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.BusinessLogic.BL;
 using eUseControl.Domain.Entities.User;
 using eUseControl.Web.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using eUseControl.Domain.Enums;
+using System.Web;
 
 namespace eUseControl.Web.Controllers
 {
      public class SignUpController : BaseController
      {
-          private readonly ISession _session;
+          private new readonly ISession _session;
 
           public SignUpController()
           {
-               var bl = new BusinessLogic.BussinesLogic();
-               _session = bl.GetSessionBL();
+               var bl = new BussinesLogic();
+               _session = bl.GetSessionBl();
+
           }
 
           // GET: Register
@@ -42,6 +42,20 @@ namespace eUseControl.Web.Controllers
 
                     data.LoginIp = Request.UserHostAddress;
                     data.LoginDateTime = DateTime.Now;
+                    if (register.IsTrainer)
+                    {
+                         data.Level = URole.Trainer;
+                         var bl = new BussinesLogic();
+                         var trainer = bl.GetTrainerBl();
+                         int trainerId = trainer.TrainerCreate();
+                         data.TrainerId = trainerId;
+
+                    }
+                    else
+                    {
+                         data.Level = URole.User;
+                         data.TrainerId = null;
+                    }
 
                     var userRegister = _session.UserRegister(data);
                     if (userRegister.Status)
@@ -53,15 +67,29 @@ namespace eUseControl.Web.Controllers
                               LoginIp = Request.UserHostAddress,
                               LoginDateTime = DateTime.Now,
                          };
-                         //HttpCookie cookie = _sessionBL.GenCookie(register.Username);
-                         //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                         var userLogin = _session.UserLogin(data0);
+                         if (userLogin.Status)
+                         {
+                              HttpCookie cookie = _session.GenCookie(data0.Credential);
+                              ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                         }
+                         else
+                         {
+                              ModelState.AddModelError("", userLogin.StatusMsg);
 
-                         return RedirectToAction("Index", "Home");
+                         }
                     }
                     else
                     {
                          ModelState.AddModelError("", userRegister.StatusMsg);
-                         return View();
+                    }
+                    if (register.IsTrainer)
+                    {
+                         return RedirectToAction("Edit", "Trainers", new { id = data.TrainerId });
+                    }
+                    else
+                    {
+                         return RedirectToAction("Index", "Home");
                     }
                }
                return View();

@@ -1,70 +1,62 @@
 ﻿using eUseControl.Domain.Entities.User;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using eUseControl.BusinessLogic.DBModel;
 using eUseControl.Domain.Entities.Subscription;
 
 namespace eUseControl.BusinessLogic.Core
 {
-     public class SubscriptionAPI
+     public class SubscriptionApi
      {
-
-
-          internal PostResponse CreateSubscriptiontAction(SubscriptionUDbTable subscription)
+          internal PostResponse CreateSubscriptionAction(SubscriptionUDbTable subscription)
           {
-               if (subscription.Name == null || subscription.Name.Length == 0)
+               if (string.IsNullOrEmpty(subscription.Name))
                {
                     return new PostResponse { Status = false, StatusMsg = "Add Subscription Name" };
                }
 
-               if (subscription.Description == null || subscription.Description.Length == 0)
+               if (string.IsNullOrEmpty(subscription.Description))
                {
-                    return new PostResponse { Status = false, StatusMsg = "Add Subscrpition Description" };
+                    return new PostResponse { Status = false, StatusMsg = "Add Subscription Description" };
                }
-
-               if (subscription.ImageUrl == null || subscription.ImageUrl.Length == 0)
+               if (string.IsNullOrEmpty(subscription.ImageUrl))
                {
-                    return new PostResponse { Status = false, StatusMsg = "Add Subscrpition Description" };
+                    return new PostResponse { Status = false, StatusMsg = "Add Subscription Image" };
+               }
+               if (subscription.Price == 0)
+               {
+                    return new PostResponse { Status = false, StatusMsg = "Add Subscription Price" };
                }
                using (var db = new UserContext())
                {
-                    //find max id
-                    var subscriptionID = db.Subscriptions
-                         .OrderBy(f => f.Id)
-                         .ToList();
-                    //adaug 
                     db.Subscriptions.Add(subscription);
                     db.SaveChanges();
                }
 
                return new PostResponse { Status = true };
           }
+
           internal List<SubscriptionData> GetSubscriptionListAction()
           {
-          List<SubscriptionData> SubscriptionData = new List<SubscriptionData>();
+               List<SubscriptionData> subscriptions = new List<SubscriptionData>();
                using (var db = new UserContext())
                {
-                    var result = db.Subscriptions
-                        .OrderBy(f => f.Id)
-                        .ToList();
+                    var result = db.Subscriptions.ToList();
 
-                    for (int i = 0; i < result.Count; i++)
+                    foreach (var item in result)
                     {
-                         SubscriptionData.Add(new SubscriptionData
+                         subscriptions.Add(new SubscriptionData
                          {
-                              Id = result[i].Id,
-                              Name = result[i].Name,
-                              Description = result[i].Description,
-                              Price = result[i].Price,
-                              ImageUrl = result[i].ImageUrl
+                              Id = item.Id,
+                              Name = item.Name,
+                              Description = item.Description,
+                              Price = item.Price,
+                              ImageUrl = item.ImageUrl
                          });
                     }
                }
-               return SubscriptionData;
+               return subscriptions;
           }
 
           internal SubscriptionUDbTable GetSingleSubscriptionAction(int id)
@@ -74,6 +66,7 @@ namespace eUseControl.BusinessLogic.Core
                     return db.Subscriptions.FirstOrDefault(p => p.Id == id);
                }
           }
+
           internal PostResponse EditSubscriptionAction(SubscriptionUDbTable subscription)
           {
                using (var db = new UserContext())
@@ -102,9 +95,11 @@ namespace eUseControl.BusinessLogic.Core
                     {
                          tableSubscription.ImageUrl = subscription.ImageUrl;
                     }
+
                     db.Entry(tableSubscription).State = EntityState.Modified;
                     db.SaveChanges();
                }
+
                return new PostResponse { Status = true };
           }
           internal PostResponse DeleteSubscriptionByIdAction(int id)
@@ -116,7 +111,7 @@ namespace eUseControl.BusinessLogic.Core
                     {
                          db.Subscriptions.Remove(result);
                          db.SaveChanges();
-                         return new PostResponse { Status = true, StatusMsg = "Deleted row: "};
+                         return new PostResponse { Status = true, StatusMsg = "Deleted Subscription " };
                     }
                     else
                     {
@@ -125,7 +120,5 @@ namespace eUseControl.BusinessLogic.Core
                }
 
           }
-
-
      }
 }

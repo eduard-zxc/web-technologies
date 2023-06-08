@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eUseControl.Domain.Entities.Subscription
 {
@@ -19,7 +14,7 @@ namespace eUseControl.Domain.Entities.Subscription
           public string Name { get; set; }
 
           [Required]
-          [Display(Name = "Price")]
+          [Display(Name = "Price Per Month")]
           public int Price { get; set; }
 
           [Required]
